@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>Angular To Do</title>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<!--<body ng-app="myListApp" ng-init="vm.$storage.lists = vm.listArray">-->
+<body ng-app="myListApp">
+    <nav id="navigate">
+        <a ui-sref="about">About</a>
+        <a ui-sref="ToDo">Lists</a>
+    </nav>
+    <div id="display" ui-view></div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script src="angular.js" type="text/javascript"></script>
+    <script src="listService.js" type="text/javascript"></script>
+    <script src="listController.js" type="text/javascript"></script>
+    <script src="ToDoController.js" type="text/javascript"></script>
+
+</body>
+</html>
