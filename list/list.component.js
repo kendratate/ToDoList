@@ -24,13 +24,11 @@
             document.getElementById('todoItem').focus();
         };
         vm.deleteItem = function (item) {
-            var currentList = vm.lists[$scope.listTitle];
+            var currentList = vm.lists[vm.listTitle];
             currentList.splice(currentList.indexOf(item), 1);
             ListService.saveList(vm.lists);
         };
-        vm.goBack = function () {
-            $state.go($rootScope.home);
-        };
+
         vm.checkItem = function (e) {
             e.currentTarget.style.opacity = "1.0";
         };

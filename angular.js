@@ -21,9 +21,6 @@ angular.module('myListApp', ['ui.router'])
                 template: '<list></list>'
 
             })
-
-
     })
-
 
 })();
