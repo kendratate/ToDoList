@@ -13,13 +13,13 @@ angular.module('myListApp', ['ui.router'])
                 })
             .state('ToDo', {
                 url: '/ToDo',
-                templateUrl: 'ToDo.html',
-                controller: 'ToDoCtrl'
+                template: '<todo></todo>'
+
             })
             .state('list', {
                 url: '/list/:title',
-                templateUrl: 'list.html',
-                controller: 'listCtrl'
+                template: '<list></list>'
+
             })
 
 

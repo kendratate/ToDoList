@@ -1,0 +1,13 @@
+<div class='form'>
+    <input type='text' id='todoTitle' class='inputs' ng-model='$ctrl.viewTitle' placeholder='Name of List'>
+    <button class='inputButton' ng-click='$ctrl.createList()'> + </button>
+</div>
+<br><br>
+<ul class='lists'>
+    <li ng-repeat='(key, value) in $ctrl.lists'>
+
+        <span class='item clickable' ng-click='$ctrl.gotoList(key)'> {{ key }} ({{ value.length }})</span>
+        <button id='deleteList' ng-click='$ctrl.deleteList(key)'>x</button>
+
+    </li>
+</ul>

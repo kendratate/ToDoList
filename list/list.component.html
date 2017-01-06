@@ -1,0 +1,13 @@
+<h1>{{ listTitle.toUpperCase() }}</h1>
+<div class='form'>
+    <input type='text' id='todoItem' class='inputs' ng-model='$ctrl.item' placeholder='Add an Item'>
+    <button class='inputButton' ng-click='$ctrl.createItem()'> + </button>
+</div>
+<br><br>
+<ul class='lists'>
+    <li ng-repeat='item in $ctrl.lists[$ctrl.listTitle]'>
+        <button id='checkItem' ng-click='$ctrl.checkItem($event)' style="opacity:0.1;"> <span id="checkMark"  class='fa fa-check'></span></button>
+        <span class='item'> {{ item }} </span>
+        <button ng-click='$ctrl.deleteItem(item)'>x</button>
+    </li>
+</ul>
