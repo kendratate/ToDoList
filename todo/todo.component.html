@@ -6,7 +6,8 @@
 <ul class='lists'>
     <li ng-repeat='(key, value) in $ctrl.lists'>
 
-        <span class='item clickable' ng-click='$ctrl.gotoList(key)'> {{ key }} ({{ value.length }})</span>
+        <span class='item clickable' editable-text='key' e-form='editButtonForm' ng-click='$ctrl.gotoList(key)'> {{ key }} ({{ value.length }})</span>
+        <button id='editButton' class="btn btn-default" ng-click="editButtonForm.$show()" ng-hide="editButtonForm.$visible">edit</button>
         <button id='deleteList' ng-click='$ctrl.deleteList(key)'>x</button>
 
     </li>

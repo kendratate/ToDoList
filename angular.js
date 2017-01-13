@@ -2,7 +2,7 @@
  * Created by kendratate on 12/15/16.
  */
 (function(){
-angular.module('myListApp', ['ui.router'])
+angular.module('myListApp', ['ui.router','xeditable', 'ngStorage'])
     .config(function($stateProvider, $urlRouterProvider) {  //ui.router always goes in config block
         $urlRouterProvider.otherwise('/');
         $stateProvider
@@ -21,6 +21,11 @@ angular.module('myListApp', ['ui.router'])
                 template: '<list></list>'
 
             })
+    })
+    .run(function(editableOptions){
+        // editableOptions.theme = 'bs3';
+        editableOptions.activationEvent = 'double-click';
+
     })
 
 })();
