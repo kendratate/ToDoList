@@ -6,7 +6,9 @@
         .component('todo', {
             controller: todoController,
             templateUrl: "todo/todo.component.html"
-        // })
+        });
+
+
         // .directive('ngRightClick', function($parse) {
         //     return function(scope, element, attrs) {
         //         var fn = $parse(attrs.ngRightClick);
@@ -17,7 +19,9 @@
         //             });
         //         });
         //     };
-        });
+        //});
+
+
 
     function todoController($location, $rootScope, ListService) {
         var vm = this;
@@ -44,6 +48,12 @@
             ListService.saveList(vm.lists);
         }
     }
+
+    angular.module('myListApp').filter('capFirst', function(){
+        return function(str) {
+            return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+        };
+    });
 
 
 })();
