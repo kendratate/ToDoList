@@ -8,6 +8,21 @@
             templateUrl: "todo/todo.component.html"
         });
 
+
+        // .directive('ngRightClick', function($parse) {
+        //     return function(scope, element, attrs) {
+        //         var fn = $parse(attrs.ngRightClick);
+        //         element.bind('contextmenu', function(event) {
+        //             scope.$apply(function() {
+        //                 event.preventDefault();
+        //                 fn(scope, {$event:event});
+        //             });
+        //         });
+        //     };
+        //});
+
+
+
     function todoController($location, $rootScope, ListService) {
         var vm = this;
         document.getElementById('todoTitle').focus();
@@ -28,5 +43,18 @@
             delete vm.lists[title];
             ListService.saveList(vm.lists);
         };
+        vm.editItem = function (title) {
+            console.log('ready to edit');
+            ListService.saveList(vm.lists);
+        }
     }
+
+    angular.module('myListApp').filter('capFirst', function(){
+        return function(str) {
+            return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+        };
+    });
+
+
 })();
+

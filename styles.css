@@ -74,7 +74,7 @@ li button {
 
 .lists li .item {
     position: absolute;
-    width: 80%;
+    width: 70%;
     font-size: 1.5em;
     left: 0;
     height: inherit;
@@ -89,6 +89,10 @@ li button {
     width: 9%;
     height: inherit;
     font-size: 1.5em;
+}
+
+#editButton {
+    width:12%;
 }
 
 .backButton {
